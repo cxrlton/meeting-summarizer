@@ -1,5 +1,5 @@
 import streamlit as st
-import PyPDF2
+import pypdf
 import io
 from summarizer import summarize, extract_action_items
 
@@ -12,7 +12,7 @@ uploaded = st.file_uploader("Upload a transcript (.txt or .pdf)", type=["txt", "
 
 if uploaded:
     if uploaded.type == "application/pdf":
-        reader = PyPDF2.PdfReader(io.BytesIO(uploaded.read()))
+        reader = pypdf.PdfReader(io.BytesIO(uploaded.read()))
         transcript = " ".join(page.extract_text() for page in reader.pages)
     else:
         transcript = uploaded.read().decode("utf-8")

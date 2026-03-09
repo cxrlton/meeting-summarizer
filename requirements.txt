@@ -1,5 +1,5 @@
-streamlit                                                                                                         
-transformers                                              
+streamlit
+transformers
 torch
-PyPDF2
+pypdf
 sentencepiece
