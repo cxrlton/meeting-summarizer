@@ -2,7 +2,7 @@ from transformers import pipeline
 import re
 
 def load_summarizer():
-    return pipeline("summarization", model="facebook/bart-large-cnn")
+    return pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 
 def summarize(text):
     result = load_summarizer()(text[:1024], max_length=150, min_length=30, do_sample=False)
